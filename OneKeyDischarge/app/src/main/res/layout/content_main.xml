@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="180dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <Button
+        android:id="@+id/button_show_battery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始放电"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textViewBattery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ShowBatteryLevel"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_show_battery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.009" />
+
+    <TextView
+        android:id="@+id/textViewSensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="放电模式：关闭"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_show_battery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBattery"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="193dp"
+        android:layout_height="191dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/button_show_battery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSensor"
+        app:layout_constraintVertical_bias="0.307">
+
+        <CheckBox
+            android:id="@+id/chk1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:duplicateParentState="false"
+            android:text="打开蓝牙" />
+
+        <CheckBox
+            android:id="@+id/chk6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="打开WiFi" />
+
+        <CheckBox
+            android:id="@+id/chk2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="打开闪光灯" />
+
+        <CheckBox
+            android:id="@+id/chk3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="打开振动" />
+
+        <CheckBox
+            android:id="@+id/chk4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="打开GPS" />
+
+        <CheckBox
+            android:id="@+id/chk5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="设置屏幕最大亮度" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止放电"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/buttonExitApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关闭应用"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <SeekBar
+        android:id="@+id/seekBarLowBat"
+        android:layout_width="322dp"
+        android:layout_height="29dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_show_battery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <TextView
+        android:id="@+id/textViewTarBat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="目标电量："
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarLowBat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarBase"
+        android:layout_width="399dp"
+        android:layout_height="31dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSensor"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/spinnerMode"
+        android:layout_width="239dp"
+        android:layout_height="21dp"
+        android:entries="@array/DischangeMode"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarBase"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <TextView
+        android:id="@+id/textViewMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 模式选择："
+        android:textColor="@android:color/background_dark"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerMode"
+        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarBase"
+        app:layout_constraintVertical_bias="0.533" />
+
+</android.support.constraint.ConstraintLayout>

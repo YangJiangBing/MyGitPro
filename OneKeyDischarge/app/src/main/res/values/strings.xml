@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">OneKeyDischarge</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string-array name = "DischangeMode">
+        <item>--请选择--</item>
+        <item>手动选择模式</item>
+        <item>一般放电模式</item>
+        <item>快速放电模式</item>
+
+    </string-array>
+
+</resources>
